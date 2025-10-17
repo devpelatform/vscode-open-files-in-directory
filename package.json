@@ -74,6 +74,18 @@
                     "type": "number",
                     "default": 50,
                     "description": "Maximum number of files to open in one action."
+                },
+                "vscode-open-files-in-directory.excludeFolders": {
+                    "type": "array",
+                    "default": [
+                        "node_modules",
+                        "dist",
+                        "build",
+                        ".git",
+                        ".vscode",
+                        "coverage"
+                    ],
+                    "description": "Folders to exclude when opening files in directory."
                 }
             }
         }
