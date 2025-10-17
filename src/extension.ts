@@ -18,10 +18,19 @@ export function activate(context: vscode.ExtensionContext) {
             commands.openCurrentDirectoryFilesRecursively,
         ),
     );
-    /**
-     * Add config options to enable/disable certain options?
-     *
-     */
+
+    // Add config change watcher
+    subscriptions.push(
+        vscode.workspace.onDidChangeConfiguration(e => {
+            if (e.affectsConfiguration('vscode-open-files-in-directory.excludeFolders')) {
+                vscode.window.showInformationMessage(
+                    'Exclude folders configuration updated. Changes will take effect on next use.',
+                    'OK'
+                );
+            }
+        })
+    );
+
     context.subscriptions.push(...subscriptions);
 }
 

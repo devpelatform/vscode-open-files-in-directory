@@ -3,6 +3,7 @@ import * as vscode from 'vscode';
 export type Settings = {
     maxRecursiveDepth: number;
     maxFiles: number;
+    excludeFolders: string[];
 };
 
 type ReadDirectory = Parameters<Thenable<[string, vscode.FileType][]>['then']>;
