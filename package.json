@@ -82,10 +82,18 @@
                         "dist",
                         "build",
                         ".git",
-                        ".vscode",
-                        "coverage"
+                        "coverage",
+                        "out",
+                        ".next",
+                        ".source",
+                        ".turbo"
                     ],
                     "description": "Folders to exclude when opening files in directory."
+                },
+                "vscode-open-files-in-directory.excludeExtensions": {
+                    "type": "array",
+                    "default": [".svg"],
+                    "description": "File extensions to exclude when opening files in directory."
                 }
             }
         }
