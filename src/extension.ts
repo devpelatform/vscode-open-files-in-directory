@@ -22,9 +22,10 @@ export function activate(context: vscode.ExtensionContext) {
     // Add config change watcher
     subscriptions.push(
         vscode.workspace.onDidChangeConfiguration(e => {
-            if (e.affectsConfiguration('vscode-open-files-in-directory.excludeFolders')) {
+            if (e.affectsConfiguration('vscode-open-files-in-directory.excludeFolders') ||
+                e.affectsConfiguration('vscode-open-files-in-directory.excludeExtensions')) {
                 vscode.window.showInformationMessage(
-                    'Exclude folders configuration updated. Changes will take effect on next use.',
+                    'Exclude configuration updated. Changes will take effect on next use.',
                     'OK'
                 );
             }

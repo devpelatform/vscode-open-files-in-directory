@@ -66,7 +66,7 @@ const createOnReadDirectoryFulfilled = (
             const filePath = vscode.Uri.joinPath(uri, fileName);
 
             // Check if file/directory should be processed (not excluded)
-            if (!shouldProcessFile(fileName, fileType, config.excludeFolders)) {
+            if (!shouldProcessFile(fileName, fileType, config.excludeFolders, config.excludeExtensions)) {
                 console.log(`Excluding ${fileType === vscode.FileType.Directory ? 'directory' : 'file'}: ${fileName}`);
                 continue;
             }
